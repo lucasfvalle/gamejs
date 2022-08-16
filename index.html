@@ -16,21 +16,24 @@
             <span id="player-value"></span>
             <div class="health">
                 <div id="player-health-text" class="health-text"></div>
-                <div id="health-points" class="health-points"></div>
+                <div id="p-health-points" class="p-health-points"></div>
             </div>
            
         </div>
-        <div class="card enemy">
+        <div id="enemy" class="card enemy">
             <h2>Enemy Name</h2>
-            <div class="hp-info">
-                 <span id="enemy-value"></span>
-            <progress id="enemy_hp"value="100" max="100"></progress>
+            <div class="health">
+                <div id="enemy-health-text" class="health-text"></div>
+                <div id="e-health-points" class="e-health-points"></div>
             </div>
            
         </div>
         <div class="battle-controll">
             <button id="attack" class="btn attack">
                 <img src="./sources/sword.png" />
+            </button>
+            <button id="fireball" class="btn attack">
+                <img src="./sources/fireball.png" />
             </button>
         </div>
         

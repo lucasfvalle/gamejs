@@ -2,20 +2,32 @@ document.addEventListener("DOMContentLoaded", () =>{
     var clickAttack = document.getElementById('attack');
     var hpEnemyValue = document.getElementById('enemy-value');
     var hpPlayerValue = document.getElementById('player-value');
-    var healthPoints = document.getElementById('health-points');
-    var healthPointsText = document.getElementById('player-health-text');
+    var pHealthPoints = document.getElementById('p-health-points');
+    var eHealthPoints = document.getElementById('e-health-points')
+    var pHpText = document.getElementById('player-health-text');
+    var eHpText = document.getElementById('enemy-health-text');
+
+    var player = document.querySelector('.player');
     
-    var hpEnemy = 100;
-    healthPointsText.textContent = `${hpEnemy}/100`;
-    clickAttack.addEventListener("click", () =>{
+    var eHp = 100;
+    var pHp = 100;
+    pHpText.textContent = `${pHp}/100`;
+    eHpText.textContent =`${eHp}/100`
+    function basicAttack(){
         var attack = Math.random() * (10 - 1) + 1;
-        hpEnemy -= Math.floor(attack);
-        if(hpEnemy < 0){
-            hpEnemy = 0;
+        eHp -= Math.floor(attack);
+        if(eHp < 0){
+            eHp = 0;
         }
-        healthPoints.style.width =hpEnemy + "%" ;
-        healthPointsText.textContent = `${hpEnemy}/100`;
-        
+        eHealthPoints.style.width =eHp + "%" ;
+        eHpText.textContent = `${eHp}/100`;
+        player.style.animation = '';
+        setTimeout(function(){
+            player.style.animation = 'attack .5s linear'
+        }, 5)
+    }
+    clickAttack.addEventListener("click", () =>{
+        basicAttack();
     })
     
     document.addEventListener("change", () =>{
