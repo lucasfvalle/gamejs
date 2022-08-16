@@ -12,6 +12,9 @@
 <body>
     <div class="container">
         <div class="card player">
+            <div class="avatar">
+                <img src="./sources/character/warlord.png" />
+            </div>
             <h2>Name</h2>
             <span id="player-value"></span>
             <div class="health">
@@ -21,6 +24,10 @@
            
         </div>
         <div id="enemy" class="card enemy">
+            <div class="avatar">
+                <img src="./sources/monster/fish-monster.png" />
+            </div>
+            
             <h2>Enemy Name</h2>
             <div class="health">
                 <div id="enemy-health-text" class="health-text"></div>
@@ -28,13 +35,15 @@
             </div>
            
         </div>
-        <div class="battle-controll">
-            <button id="attack" class="btn attack">
-                <img src="./sources/sword.png" />
-            </button>
-            <button id="fireball" class="btn attack">
-                <img src="./sources/fireball.png" />
-            </button>
+        <div class="battle-controll-container">
+            <div class="battle-controll">
+                <button id="attack" class="btn attack">
+                    <img src="./sources/skill/sword.png" />
+                </button>
+                <button id="fireball" class="btn attack">
+                    <img src="./sources/skill/fireball.png" />
+                </button>
+            </div>
         </div>
         
         
