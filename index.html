@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer></script>
+    <title>Attack
+    </title>
+</head>
+<body>
+    <div class="container">
+        <div class="card player">
+            <h2>Name</h2>
+            <span id="player-value"></span>
+            <div class="health">
+                <div id="player-health-text" class="health-text"></div>
+                <div id="health-points" class="health-points"></div>
+            </div>
+           
+        </div>
+        <div class="card enemy">
+            <h2>Enemy Name</h2>
+            <div class="hp-info">
+                 <span id="enemy-value"></span>
+            <progress id="enemy_hp"value="100" max="100"></progress>
+            </div>
+           
+        </div>
+        <div class="battle-controll">
+            <button id="attack" class="btn attack">
+                <img src="./sources/sword.png" />
+            </button>
+        </div>
+        
+        
+       
+    </div>
+    
+</body>
+</html>
