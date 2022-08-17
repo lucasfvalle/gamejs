@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         },
         {
             name: 'Goblin',
-            avatar: './sources/monster/fish-monster.png',
+            avatar: './sources/monster/goblin.png',
             type: 'Beast',
             level: 1,
             exp: 100,
@@ -22,8 +22,37 @@ document.addEventListener("DOMContentLoaded", () =>{
             status: 1
         },
         {
-            name: 'Fish Monster',
-            avatar: './sources/monster/fish-monster.png',
+            name: 'Golem',
+            avatar: './sources/monster/golem.png',
+            type: 'Beast',
+            level: 1,
+            exp: 100,
+            max_atk: 25,
+            min_atk: 5,
+            status: 1
+        },
+        {
+            name: 'Slime',
+            avatar: './sources/monster/slime.png',
+            type: 'Beast',
+            level: 1,
+            exp: 100,
+            max_atk: 25,
+            min_atk: 5,
+            status: 1
+        }, {
+            name: 'Troll',
+            avatar: './sources/monster/troll.png',
+            type: 'Beast',
+            level: 1,
+            exp: 100,
+            max_atk: 25,
+            min_atk: 5,
+            status: 1
+        },
+        {
+            name: 'Vampire',
+            avatar: './sources/monster/vampire.png',
             type: 'Beast',
             level: 1,
             exp: 100,
@@ -43,8 +72,8 @@ document.addEventListener("DOMContentLoaded", () =>{
     var eAvatar = document.getElementById('e-avatar');
     var eName = document.getElementById('e-name');
 
-    eAvatar.setAttribute("src", monsters[0].avatar)
-    eName.textContent = monsters[0].name;
+    eAvatar.setAttribute("src", monsters[2].avatar)
+    eName.textContent = monsters[2].name;
     
     /* Mana Points */
     var pManaPoints = document.getElementById('p-mana-points');
