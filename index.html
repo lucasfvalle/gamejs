@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/card.css">
     <script src="./js/main.js" defer></script>
+    <script type="module" src="./js/monster.js"></script>
     <title>Attack
     </title>
 </head>
 <body>
     <div class="container">
+        <!-- Card jogador-->
         <div class="card player">
             <div class="avatar">
                 <img src="./sources/character/warlord.png" />
@@ -21,20 +24,25 @@
                 <div id="player-health-text" class="health-text"></div>
                 <div id="p-health-points" class="p-health-points"></div>
             </div>
-           
+            <div class="mana">
+                <div id="player-mana-text" class="player-mana-text"></div>
+                <div id="p-mana-points" class="p-mana-points"></div>
+            </div>
         </div>
+
+        <!-- Card inimigo-->
         <div id="enemy" class="card enemy">
             <div class="avatar">
-                <img src="./sources/monster/fish-monster.png" />
+                <img id="e-avatar"/>
             </div>
-            
-            <h2>Enemy Name</h2>
+            <h2 id="e-name"></h2>
             <div class="health">
                 <div id="enemy-health-text" class="health-text"></div>
                 <div id="e-health-points" class="e-health-points"></div>
             </div>
-           
         </div>
+
+        <!-- Controles de batalha-->
         <div class="battle-controll-container">
             <div class="battle-controll">
                 <button id="attack" class="btn attack">
@@ -45,9 +53,31 @@
                 </button>
             </div>
         </div>
-        
-        
-       
+
+        <!-- Log de batalha + Informações do personagem + Barra de experiência -->
+        <div class="info-container">
+            <div class="exp-bar">
+                <div class="exp-text">Experiência: 100/500</div>
+                <div class="exp-points"></div>
+            </div>
+            <div class="log">
+                <h2>Batalha </h2>
+                <ul class="log-list">
+                    <li><span>Batalha: </span> Usou ataque básico: 10 dano.</li>
+                    <li><span>Batalha: </span> Usou ataque básico: 10 dano.</li>
+                    <li><span>Batalha: </span> Usou ataque básico: 10 dano.</li>
+                </ul>
+            </div>
+            <div class="char-info">
+                <h2>Personagem</h2>
+                <ul class="info-list">
+                    <li><span>Nome:</span> Char</li>
+                    <li><span>Level:</span> 1</li>
+                    <li><span>Experiência:</span>100</li>
+                    <li><span>Próximo level:</span>500</li>
+                </ul>
+            </div>
+        </div>
     </div>
     
 </body>
