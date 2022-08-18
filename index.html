@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/expbar.css">
+    <link rel="stylesheet" href="./css/battle-control.css">
+    <link rel="stylesheet" href="./css/info-container.css">
     <script src="./js/main.js" defer></script>
     <script type="module" src="./js/monster.js"></script>
     <title>Attack
@@ -13,6 +16,14 @@
 </head>
 <body>
     <div class="container">
+        <div class="start-container">
+            <h2 class="start-title">GameTest</h2>
+            <p class="start-desc"> Clique no botão abaixo para jogar!</p>
+            <button id="start" class="start-btn">Iniciar</button>
+        </div>
+        
+    </div>
+    <div class="game-container">
         <!-- Card jogador-->
         <div class="card player">
             <div class="avatar">
@@ -43,8 +54,8 @@
         </div>
 
         <!-- Controles de batalha-->
-        <div class="battle-controll-container">
-            <div class="battle-controll">
+        <div class="battle-control-container">
+            <div class="battle-control">
                 <button id="attack" class="btn attack">
                     <img src="./sources/skill/sword.png" />
                 </button>

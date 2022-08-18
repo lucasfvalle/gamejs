@@ -64,7 +64,18 @@ document.addEventListener("DOMContentLoaded", () =>{
     
     
 
-    
+    /* Stage */
+    var gameStage = document.querySelector('.game-container');
+    var initialStage = document.querySelector('.container');
+
+    gameStage.style.display = "none";
+
+    var startGame = document.getElementById('start');
+    startGame.addEventListener("click", () =>{
+        gameStage.style.display = "flex";
+        initialStage.style.display = "none"
+    })
+
     /* Health Points*/
     var pHealthPoints = document.getElementById('p-health-points');
     var eHealthPoints = document.getElementById('e-health-points')
@@ -190,6 +201,12 @@ document.addEventListener("DOMContentLoaded", () =>{
             console.log("Exp ganha: " + monsters[0].exp)
             currentExp += monsters[0].exp;
             expbarText.textContent = `Experiência: ${currentExp}/${maxExp}`;
+            var expPer = currentExp * 0.1;
+            console.log(expPer)
+            if(expBarPoints.style.width != "100%"){
+                expBarPoints.style.width = expPer + "%"
+            }
+            
             return true
         }else{
             return false

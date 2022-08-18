@@ -1,0 +1,27 @@
+.info-container{
+    width: 800px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.log{
+    width: 50%;
+    height: 100px;
+}
+.char-info{
+    width: 50%;
+    height: 100px;
+}
+.log-list, .info-list{
+    list-style: none;
+    padding: 0;
+}
+.log-list{
+    height: 70px;
+    overflow-y: auto;
+}
