@@ -18,6 +18,10 @@
     <div class="container">
         <div class="start-container">
             <h2 class="start-title">GameTest</h2>
+            <div class="input-container">
+                <h2>Digite o nome do seu personagem:</h2>
+                <input id="name-input" />
+            </div>
             <p class="start-desc"> Clique no botão abaixo para jogar!</p>
             <button id="start" class="start-btn">Iniciar</button>
         </div>
@@ -26,10 +30,11 @@
     <div class="game-container">
         <!-- Card jogador-->
         <div class="card player">
+            <h2>Name</h2>
             <div class="avatar">
                 <img src="./sources/character/warlord.png" />
             </div>
-            <h2>Name</h2>
+            
             <span id="player-value"></span>
             <div class="health">
                 <div id="player-health-text" class="health-text"></div>

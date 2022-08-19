@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     ]
     
     
+    
 
     /* Stage */
     var gameStage = document.querySelector('.game-container');
@@ -75,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () =>{
         gameStage.style.display = "flex";
         initialStage.style.display = "none"
     })
-
     /* Health Points*/
     var pHealthPoints = document.getElementById('p-health-points');
     var eHealthPoints = document.getElementById('e-health-points')
@@ -97,27 +97,41 @@ document.addEventListener("DOMContentLoaded", () =>{
     var fireball = document.getElementById('fireball');
     
 
-    var player = document.querySelector('.player');
+    var playerCard = document.querySelector('.player');
     
     var eHp = 100;
     var pHp = 100;
     var pMp = 100;
 
+    let Player = {
+        name: '',
+        hp: 100,
+        mp: 100,
+        maxHp: 100,
+        level: 1,
+        currentExp: 0,
+        maxExp: 200,
+        skill: '',
+    }
+    function levelUp(currentExp, maxExp, level){
+        if(currentExp == maxExp){
+            currentExp = 0;
+            maxExp += 100;
+            level++;
+            console.log(`Level: ${level}`);
+        }
+    }
+   
      /* Expbar */
      var expBarPoints = document.getElementById('exp-bar-points');
      var expbarText = document.getElementById('exp-bar-text');
     /* Exp value*/
-    var currentExp =0;
-    var maxExp = 1000
-
-     /* Exp display */
-     expBarPoints.style.width = currentExp + "%";
-     expbarText.textContent = `Experiência: ${currentExp}/${maxExp}`;
+    /* Exp display */
+     expBarPoints.style.width = Player.currentExp + "%";
+     expbarText.textContent = `Experiência: ${Player.currentExp}/${Player.maxExp}`;
     
-    
-
-    pMpText.textContent = `${pMp}/100`;
-    pHpText.textContent = `${pHp}/100`;
+    pMpText.textContent = `${Player.mp}/100`;
+    pHpText.textContent = `${Player.hp}/100`;
     eHpText.textContent =`${eHp}/100`;
 
     
@@ -157,13 +171,10 @@ document.addEventListener("DOMContentLoaded", () =>{
         /* Log */
         battleLog(attack_name, dmgValue);
         
-        
-        
-
         /* Animação de ataque */
-        player.style.animation = '';
+        playerCard.style.animation = '';
         setTimeout(function(){
-            player.style.animation = 'attack .5s linear'
+            playerCard.style.animation = 'attack .5s linear'
         }, 5)
     }
     function fireBall(){
@@ -191,22 +202,21 @@ document.addEventListener("DOMContentLoaded", () =>{
         battleLog(attack_name, dmgValue)
 
         /* Animação de ataque */
-        player.style.animation = '';
+        playerCard.style.animation = '';
         setTimeout(function(){
-            player.style.animation = 'attack .5s linear'
+            playerCard.style.animation = 'attack .5s linear'
         }, 5)
     }
     function enemyDead(){
         if(eHp == 0){
             console.log("Exp ganha: " + monsters[0].exp)
-            currentExp += monsters[0].exp;
-            expbarText.textContent = `Experiência: ${currentExp}/${maxExp}`;
-            var expPer = currentExp * 0.1;
-            console.log(expPer)
+            Player.currentExp += monsters[0].exp;
+            expbarText.textContent = `Experiência: ${Player.currentExp}/${Player.maxExp}`;
+            var expPer = Player.currentExp / Player.maxExp *100;
             if(expBarPoints.style.width != "100%"){
                 expBarPoints.style.width = expPer + "%"
             }
-            
+            levelUp(Player.currentExp, Player.maxExp, Player.level);
             return true
         }else{
             return false
