@@ -17,20 +17,24 @@
 <body>
     <div class="container">
         <div class="start-container">
-            <h2 class="start-title">GameTest</h2>
-            <div class="input-container">
-                <h2>Digite o nome do seu personagem:</h2>
-                <input id="name-input" />
+            <div class="form-container">
+                <h2 class="start-title">GameTest</h2>
+                <div class="input-container">
+                    <form>
+                        <label for="name-input">Digite o nome do seu personagem:</label>
+                        
+                        <input type="text" name="name-input" id="name-input" />
+                        <input type="submit" id="start" class="start-btn">Iniciar</input>
+                    </form>
+                </div>
             </div>
-            <p class="start-desc"> Clique no botão abaixo para jogar!</p>
-            <button id="start" class="start-btn">Iniciar</button>
         </div>
         
     </div>
     <div class="game-container">
         <!-- Card jogador-->
         <div class="card player">
-            <h2>Name</h2>
+            <h2 id="player-name"></h2>
             <div class="avatar">
                 <img src="./sources/character/warlord.png" />
             </div>

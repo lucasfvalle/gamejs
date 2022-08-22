@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () =>{
+    let Player = {
+        name: '',
+        hp: 100,
+        mp: 100,
+        maxHp: 100,
+        level: 1,
+        currentExp: 0,
+        maxExp: 200,
+        skill: '',
+    }
     /* Monstros */
     var monsters = [
         {
@@ -61,26 +71,26 @@ document.addEventListener("DOMContentLoaded", () =>{
             status: 1
         }
     ]
-    
-    
-    
 
     /* Stage */
     var gameStage = document.querySelector('.game-container');
     var initialStage = document.querySelector('.container');
-
     gameStage.style.display = "none";
 
+    
     var startGame = document.getElementById('start');
-    startGame.addEventListener("click", () =>{
+    startGame.addEventListener("click", async function(event){
+        event.preventDefault();
         gameStage.style.display = "flex";
-        initialStage.style.display = "none"
+        initialStage.style.display = "none";
     })
     /* Health Points*/
+    var pName = document.getElementById('player-name');
     var pHealthPoints = document.getElementById('p-health-points');
     var eHealthPoints = document.getElementById('e-health-points')
     var pHpText = document.getElementById('player-health-text');
     var eHpText = document.getElementById('enemy-health-text');
+    
 
     /* Enemy */
     var eAvatar = document.getElementById('e-avatar');
@@ -103,16 +113,9 @@ document.addEventListener("DOMContentLoaded", () =>{
     var pHp = 100;
     var pMp = 100;
 
-    let Player = {
-        name: '',
-        hp: 100,
-        mp: 100,
-        maxHp: 100,
-        level: 1,
-        currentExp: 0,
-        maxExp: 200,
-        skill: '',
-    }
+    
+
+    /* Card Player */
     function levelUp(currentExp, maxExp, level){
         if(currentExp == maxExp){
             currentExp = 0;
